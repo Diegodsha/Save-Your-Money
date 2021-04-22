@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<div class="user-thumb" style="width:60px; height:60px; border-radius:50%">
+  <%=image_tag(@user.avatar, style:"width:100%; border-radius:50%")%>
+</div>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
