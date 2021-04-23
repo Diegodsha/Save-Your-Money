@@ -11,6 +11,53 @@ body {
 /*navbar*/
 nav {
   background-color: $blue;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  .username {
+    border: 2px solid #093f7c;
+    border-radius: 1rem;
+  }
+  .user-thumb {
+    img {
+      border: 3px solid #093f7c;
+    }
+  }
+  .nav-link {
+    border-radius: 1rem;
+
+    &:hover {
+      background-color: #093f7c;
+    }
+  }
+}
+
+.login-app-name {
+  height: 70vh;
+
+  p {
+    font-size: 40px;
+  }
+}
+
+.log-sign-btns {
+  width: 98%;
+  .log-in-btn {
+    width: 100%;
+    text-align: center;
+    background: $blue;
+    border-radius: 5px;
+    &:hover {
+      background-color: #186bcb;
+    }
+  }
+  .sign-up-btn {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    &:hover {
+      background: white;
+    }
+  }
 }
 
 /**/
