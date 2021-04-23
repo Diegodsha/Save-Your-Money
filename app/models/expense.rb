@@ -6,4 +6,6 @@ class Expense < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 3, maximum: 30 }
   validates :amount, presence: true, numericality: { less_than: 10_000 }
+
+  scope :most_recent, -> { where('created_at < ?', Time.now) }
 end

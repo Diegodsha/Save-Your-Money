@@ -6,12 +6,12 @@ class User < ApplicationRecord
 
     validates :email, presence: true
     validates :name, presence: true, uniqueness: true
-   # validates :avatar, blob: { content_type: :image }
 
-   after_commit :add_default_cover, on: [:create, :update]
+    after_commit :add_default_cover, on: [:create, :update]
 
 
-private def add_default_cover
+private
+ def add_default_cover
   unless avatar.attached?
     self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "bkcode7.jpg")), filename: 'bkcode7.jpg' , content_type: "image/jpg")
   end

@@ -13,16 +13,13 @@
           <div class="username text-white d-flex justify-content-center nav-link p-2 mt-3"> <%="Hello #{current_user.name.titlecase} ready to start saving money?"%></div>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex justify-content-center" href="#">All groups</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active d-flex justify-content-center" aria-current="page" href="#">All my transactions</a>
+          <%=link_to 'All my Expenses', expenses_path, class: 'nav-link d-flex justify-content-center'%>
         </li>
         <li class="nav-item">
           <a class="nav-link d-flex justify-content-center" href="#">All my external transactions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex justify-content-center" href="#">All groups</a>
+          <%=link_to 'All groups', groups_path, class: 'nav-link d-flex justify-content-center'%>
         </li>
         <li class="nav-item">
           <%=link_to 'Edit your profile', edit_user_path(current_user), class:'d-flex justify-content-center nav-link'%>

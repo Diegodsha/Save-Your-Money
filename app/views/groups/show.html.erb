@@ -5,6 +5,11 @@
   <strong>Name:</strong>
   <%= @group.name %>
 </p>
+<% @group.expenses.each do |expense| %>
+  <%=expense.name%>
+  <%=expense.amount%>
+  <%=expense.user.name%>
+<% end %>
 <%# <p>
   <strong>User:</strong>
   <%= @group.user_id %.>

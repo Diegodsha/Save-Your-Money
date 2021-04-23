@@ -4,8 +4,15 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    @expenses = Expense.where('user_id = ?',current_user.id).joins(:groups_expenses)
+  #   @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('userr_id=?', current_user.id).left_outer_joins(:groups).where('groups.id IS NULL')
+  # render 'index'
   end
+
+  def expense_ungrouped
+    @expenses = Expense.where('user_id = ?',current_user.id).left_outer_joins(:groups_expenses).where('group.id IS NULL')
+  end
+  
 
   # GET /expenses/1 or /expenses/1.json
   def show
@@ -23,13 +30,12 @@ class ExpensesController < ApplicationController
   # POST /expenses or /expenses.json
   def create
     @expense = current_user.expenses.build(expense_params)
-   
   
-
     respond_to do |format|
       if @expense.save
         group_id = params[:expense][:group_id]
-        GroupsExpense.create(group_id:group_id, expense_id:@expense.id) if group_id
+        GroupsExpense.create(group_id:group_id, expense_id:@expense.id)
+      
         format.html { redirect_to @expense, notice: "Expense added." }
         format.json { render :show, status: :created, location: @expense }
       else

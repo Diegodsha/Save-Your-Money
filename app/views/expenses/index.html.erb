@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <h1>Expenses</h1>
 <table>
   <thead>
@@ -10,16 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.name %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.user.name %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure you wnat to remove this expense?' } %></td>
-      </tr>
-    <% end %>
+    <%= render 'expense' %>
   </tbody>
 </table>
 <br>
