@@ -67,7 +67,6 @@ nav {
   background-color: white;
   box-shadow: 2px 2px 4px #0000007d;
   border-radius: 1rem;
-  margin: 10px 0 20px 0;
   .save-money {
     font-size: 10px;
   }
@@ -83,6 +82,7 @@ nav {
   border-radius: 1rem;
   box-shadow: 2px 2px 4px #0000007d;
   max-width: 710px;
+  min-width: 300px;
   .card-body {
     padding: 2rem 1rem;
   }
@@ -100,5 +100,21 @@ nav {
     width: 90%;
     border: 1px solid;
     border-radius: 0.5rem;
+  }
+}
+
+/*user profile*/
+
+.user-profile-ul {
+  background-color: $blue;
+  border-radius: 1rem;
+  li:hover {
+    background-color: $blue;
+    a {
+      color: white;
+    }
+  }
+  strong {
+    font-size: 10px;
   }
 }

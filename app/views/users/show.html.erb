@@ -2,30 +2,25 @@
   <div class="user-thumb my-3">
     <%=image_tag(@user.avatar, style:"width:180px; height:180px; border-radius:50%")%>
   </div>
- <div>
- <ul class="list-style-none">
-   <li class="">
+ <div class="user-profile-ul">
+ <ul class="list-group">
+ <div class="username text-white d-flex justify-content-center nav-link p-2 mt-3"> <%="Hello #{current_user.name.titlecase} ready to start saving money?"%></div>
+   <li class="list-group-item">
           <%=link_to 'All my Expenses', expenses_path, class: 'nav-link d-flex justify-content-center'%>
         </li>
-        <li class="nav-item">
-          <a class="" href="#">All my external expenses</a>
+        <li class="list-group-item">
+          <%=link_to 'All my External Expenses', expenses_expense_ungrouped_path, class: 'nav-link d-flex justify-content-center'%>
         </li>
-        <li class="list-style-none">
+        <li class="list-group-item">
           <%=link_to 'All groups', groups_path, class: 'nav-link d-flex justify-content-center'%>
         </li>
-        <li class="list-style-none">
+        <li class="list-group-item">
           <%=link_to 'Edit your profile', edit_user_path(current_user), class:'d-flex justify-content-center nav-link text-decoration-none'%>
         </li>
  </ul>
-    <p>
-      <strong>Name:</strong>
-      <%= @user.name %>
+    <p class="text-center">
+      <strong class="text-white text-center">Money isn't everything but everything needs money</strong>
     </p>
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-    <%= link_to 'Edit', edit_user_path(@user) %>
  </div>
   
 </div>
