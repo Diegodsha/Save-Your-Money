@@ -6,4 +6,9 @@ module ApplicationHelper
           render partial: 'partials/notsignedin'
         end
       end
+
+    def verbose_date(date)
+        date.strftime('%B %d %y')
+        
+    end
 end

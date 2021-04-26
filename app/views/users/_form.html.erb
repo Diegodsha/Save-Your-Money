@@ -11,7 +11,7 @@
   <% end %>
   <div class="field">
     <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
+    <%= form.file_field :avatar, direct_upload: true, accept: "image/jpeg, image/gif, image/png" %>
   </div>
   <div class="field">
     <%= form.label :name %>

@@ -1,16 +1,17 @@
-<h1>Expenses</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Creator</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render 'expense' %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Expense', new_expense_path %>
+<div class="total-expense d-flex flex-column px-2">
+<div class="exp-total fw-bold  d-flex justify-content-center align-items-center">
+  <span class="me-2">
+    Expenses:<%=@expenses.count%>
+  </span>
+  <span>
+  Total amount: <%= total_expense(@expenses)  %>
+  </span>
+</div>
+
+<%= render 'expense' %>
+<div class="new-ex-btn text-center bg-succes w-100 mb-2 d-flex align-items-center justify-content-center">
+  
+  <%= link_to 'New Expense', new_expense_path, class:'text-white text-decoration-none new-exp' %>
+  
+</div>
+</div>

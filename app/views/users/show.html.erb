@@ -1,12 +1,31 @@
-<div class="user-thumb">
-  <%=image_tag(@user.avatar, style:"width:180px; height:180px; border-radius:50%")%>
+<div class="d-flex flex-column align-items-center">
+  <div class="user-thumb my-3">
+    <%=image_tag(@user.avatar, style:"width:180px; height:180px; border-radius:50%")%>
+  </div>
+ <div>
+ <ul class="list-style-none">
+   <li class="">
+          <%=link_to 'All my Expenses', expenses_path, class: 'nav-link d-flex justify-content-center'%>
+        </li>
+        <li class="nav-item">
+          <a class="" href="#">All my external expenses</a>
+        </li>
+        <li class="list-style-none">
+          <%=link_to 'All groups', groups_path, class: 'nav-link d-flex justify-content-center'%>
+        </li>
+        <li class="list-style-none">
+          <%=link_to 'Edit your profile', edit_user_path(current_user), class:'d-flex justify-content-center nav-link text-decoration-none'%>
+        </li>
+ </ul>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+    <%= link_to 'Edit', edit_user_path(@user) %>
+ </div>
+  
 </div>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-<%= link_to 'Edit', edit_user_path(@user) %> |

@@ -19,13 +19,13 @@
   </div>
   <div class="field">
     <%= form.label :group_id, class: 'input-group-text' %>
-    <%= form.collection_select(:group_id, Group.all.order(:name), :id, :name, {include_blank: true}, {class: 'group-select'}) %>
+    <%= form.collection_select(:group_id, Group.all, :id, :name, {include_blank: true}, {class: 'group-select'}) %>
   </div>
   <%# <div class="field">
     <%= form.label :user_id %.>
     <%= form.text_field :user_id %.>
   </div> %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit Expense'%>
   </div>
 <% end %>
