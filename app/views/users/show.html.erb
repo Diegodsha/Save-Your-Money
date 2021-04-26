@@ -6,16 +6,16 @@
  <ul class="list-group">
  <div class="username text-white d-flex justify-content-center nav-link p-2 mt-3"> <%="Hello #{current_user.name.titlecase} ready to start saving money?"%></div>
    <li class="list-group-item">
-          <%=link_to 'All my Expenses', expenses_path, class: 'nav-link d-flex justify-content-center'%>
+          <%=link_to 'All my Expenses', expenses_path, class: 'nav-link d-flex justify-content-center bi bi-cash'%>
         </li>
         <li class="list-group-item">
-          <%=link_to 'All my External Expenses', expenses_expense_ungrouped_path, class: 'nav-link d-flex justify-content-center'%>
+          <%=link_to 'All my External Expenses', expenses_expense_ungrouped_path, class: 'nav-link d-flex justify-content-center bi  bi-cash-stack'%>
         </li>
         <li class="list-group-item">
-          <%=link_to 'All groups', groups_path, class: 'nav-link d-flex justify-content-center'%>
+          <%=link_to 'All groups', groups_path, class: 'nav-link d-flex justify-content-center bi bi-collection-fill'%>
         </li>
         <li class="list-group-item">
-          <%=link_to 'Edit your profile', edit_user_path(current_user), class:'d-flex justify-content-center nav-link text-decoration-none'%>
+          <%=link_to 'Edit your profile', edit_user_path(current_user), class:'d-flex justify-content-center nav-link text-decoration-none bi bi-pencil-square'%>
         </li>
  </ul>
     <p class="text-center">

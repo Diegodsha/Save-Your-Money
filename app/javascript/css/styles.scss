@@ -104,6 +104,27 @@ nav {
 }
 /*card show*/
 
+.bi-cash::before {
+  align-self: center;
+  margin-right: 10px;
+}
+.bi-box-arrow-left::before {
+  align-self: center;
+  margin-right: 10px;
+}
+.bi-pencil-square::before {
+  align-self: center;
+  margin-right: 10px;
+}
+.bi-collection-fill::before {
+  align-self: center;
+  margin-right: 10px;
+}
+.bi-cash-stack::before {
+  align-self: center;
+  margin-right: 10px;
+}
+
 /*user profile*/
 
 .user-profile-ul {
