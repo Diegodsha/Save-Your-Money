@@ -1,6 +1,6 @@
 class Expense < ApplicationRecord
   
-  # after_create :create_group_expense
+   #after_update :update_group #if: :group_id_nil?
 
   belongs_to :user
 
@@ -12,16 +12,11 @@ class Expense < ApplicationRecord
 
   scope :most_recent, -> { where('created_at < ?', Time.now) }
 
-# def create_group_expense
-#   #group_id = [self][:group_ids]
-  
-#   self.groups_expenses.create(group_id:group_ids, expense_id:id)
+# def update_group
+#       group_id = params[:expense][:group_id]
+#         GroupsExpense.create(group_id:group_id, expense_id:@expense.id) if group_id
+#   self.group_ids = group_id
   
 # end
-
-
-
-
-
 
 end

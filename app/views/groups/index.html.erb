@@ -1,24 +1,14 @@
-<p id="notice"><%= notice %></p>
-<h1>Groups</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.created_at %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Group', new_group_path %>
+<div class="total-expense d-flex flex-column px-2">
+<div class="exp-total fw-bold  d-flex justify-content-center align-items-center mt-1 mb-4">
+  <span class="me-2">
+    Groups:<%=@groups.count%>
+  </span>
+</div>
+
+<%= render 'group' %>
+<div class="new-ex-btn text-center bg-succes w-100 mb-2 mt-5 d-flex align-items-center justify-content-center">
+  
+  <%= link_to 'New Group', new_group_path, class:'text-white text-decoration-none new-exp' %>
+  
+</div>
+</div>
