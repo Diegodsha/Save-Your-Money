@@ -1,17 +1,25 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @expense.name %>
-</p>
-<p>
-  <strong>Amount:</strong>
-  <%= @expense.amount %>
-</p>
-<p>
-  <strong>User:</strong>
-  <%= @expense.user_id %>
-</p>
-gropus<%=@expense.groups.ids%>
-<%= link_to 'Edit', edit_expense_path(@expense) %> |
-<%= link_to 'Back', expenses_path %>
-<%= link_to 'Destroy', @expense, method: :delete, data: { confirm: 'Are you sure you wnat to remove this expense?' } %>
+<div class="container">
+  
+  <div class="card text-center mt-5">
+    <div class="card-header">
+       <%= @expense.name %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Amount : $<%= @expense.amount %></h5>
+      <%= link_to expenses_path,class:"text-decoration-none" do %>
+      <i class="bi bi-arrow-left-square text-dark"></i>
+      <% end %>
+
+      <%= link_to edit_expense_path(@expense),class:"text-decoration-none" do %> 
+      <i class="bi bi-pencil text-dark mx-3 "></i>
+      <% end %>
+      
+      <%= link_to @expense, method: :delete, data: { confirm: 'Are you sure you wnat to remove this expense?'} do %>
+      <i class="bi bi-trash text-dark"></i>
+      <% end %>
+    </div>
+    <div class="card-footer text-muted">
+      Created by: <%= @expense.user.name %> - <%=time_ago_in_words(@expense.created_at.localtime)%> ago
+    </div>
+  </div>
+</div>
