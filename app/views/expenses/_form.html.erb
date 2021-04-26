@@ -10,22 +10,21 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name,style:"display:none" %>
     <%= form.text_field :name,placeholder:'Name your expense' %>
+    <hr>
   </div>
   <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount,placeholder:'Be stingy :P' %>
+    <%= form.label :amount,style:"display:none" %>
+    <%= form.number_field :amount,placeholder:'Amount (Be stingy :P)' %>
+    <hr>
   </div>
   <div class="field">
     <%= form.label :group_id, class: 'input-group-text' %>
-    <%= form.collection_select(:group_id, Group.all, :id, :name, {include_blank: true}, {class: 'group-select'}) %>
+    <%= form.collection_select(:group_id, Group.all, :id, :name, {include_blank: true}, {class: 'group-select w-100'}) %>
+    <hr>
   </div>
-  <%# <div class="field">
-    <%= form.label :user_id %.>
-    <%= form.text_field :user_id %.>
-  </div> %>
   <div class="actions">
-    <%= form.submit 'Submit Expense'%>
+    <%= form.submit class:"btn btn-primary"%>
   </div>
 <% end %>

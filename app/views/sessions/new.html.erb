@@ -1,6 +1,7 @@
-<h1>Login</h1>
+<h1 class="my-5 text-center">Login</h1>
 <%= form_tag '/login' do %>
-  <%= label_tag 'Name'%>
-  <%= text_field_tag :name %>
-  <%= submit_tag 'Login'%>
+  <%= label_tag 'Name',''%>
+  <%= text_field_tag :name, 'Name' %>
+  <hr>
+  <%= submit_tag 'Login',class:'btn btn-primary'%>
 <%end%>

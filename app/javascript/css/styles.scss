@@ -126,7 +126,15 @@ nav {
 }
 
 /**/
-
+form {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 20px;
+  input {
+    border: none;
+    width: 100%;
+  }
+}
 /*user profile*/
 
 .user-profile-ul {

@@ -1,30 +1,28 @@
-<div class="container justify-content-center d-flex mt-5">
-  
-  <div class="card" style="width: 18rem;">
+<div class="container justify-content-center d-flex ">
+  <div class="card my-5" style="width: 18rem;">
     <%=image_tag(@group.icon,style:"border-radius:1rem;")%>
     <div class="card-body crd-bdy">
       <h5 class="card-title text-center mb-5"> <%= @group.name %></h5>
       <p class="m-0">Expenses:</p>
     </div>
     <ul class="list-group list-group-flush">
-    <% @group.expenses.each do |expense| %>
-      <li class="list-group-item d-flex justify-content-between" style="font-size:13px;"> 
-      <span class="d-flex flex-column"> <small class="text-muted">Name</small> <%=expense.name%></span>
-      <span class="d-flex flex-column"><small class="text-muted">Amount</small>$<%=expense.amount%></span>
-      <span class="d-flex flex-column"><small class="text-muted">Created by</small><%=expense.user.name%></span>
-      <span class="d-flex align-items-end"><%= link_to expense do%>
-        <i class="bi bi-eye-fill text-secondary"></i>
-        <% end %></span>
-       </li>
-  
-  <% end %>
+      <% @group.expenses.each do |expense| %>
+        <li class="list-group-item d-flex justify-content-between" style="font-size:13px;">
+          <span class="d-flex flex-column"> <small class="text-muted">Name</small> <%=expense.name%></span>
+          <span class="d-flex flex-column"><small class="text-muted">Amount</small>$<%=expense.amount%></span>
+          <span class="d-flex flex-column"><small class="text-muted">Created by</small><%=expense.user.name%></span>
+          <span class="d-flex align-items-end"><%= link_to expense do%>
+              <i class="bi bi-eye-fill text-secondary"></i>
+            <% end %></span>
+        </li>
+      <% end %>
     </ul>
     <div class="card-body text-center">
-       <%= link_to groups_path, class:"card-link text-decoration-none" do %>
-      <i class="bi bi-arrow-left-square text-dark"></i>
+      <%= link_to groups_path, class:"card-link text-decoration-none" do %>
+        <i class="bi bi-arrow-left-square text-dark"></i>
       <% end %>
-    <%= link_to edit_group_path(@group), class:"card-link text-decoration-none" do %> 
-      <i class="bi bi-pencil text-dark mx-3 "></i>
+      <%= link_to edit_group_path(@group), class:"card-link text-decoration-none" do %>
+        <i class="bi bi-pencil text-dark mx-3 "></i>
       <% end %>
     </div>
   </div>
