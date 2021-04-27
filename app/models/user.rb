@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :expenses, dependent: :destroy
   has_many :groups, dependent: :destroy
@@ -12,9 +14,9 @@ class User < ApplicationRecord
   private
 
   def add_default_cover
-    unless avatar.attached?
+   return if avatar.attached?
       avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'horse.jpg')), filename: 'horse.jpg',
                     content_type: 'image/jpg')
-    end
   end
+
 end

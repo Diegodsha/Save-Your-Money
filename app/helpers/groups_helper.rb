@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GroupsHelper
   def display_eye(expense)
     render 'eye' if current_user == expense.author

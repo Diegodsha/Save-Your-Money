@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeExpensesUserIdToAuthorId < ActiveRecord::Migration[6.1]
   def change
     change_table :expenses do |t|
