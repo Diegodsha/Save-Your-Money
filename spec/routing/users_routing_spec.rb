@@ -25,6 +25,5 @@ RSpec.describe UsersController, type: :routing do
     it 'routes to #update via PATCH' do
       expect(patch: '/users/1').to route_to('users#update', id: '1')
     end
-
   end
 end
