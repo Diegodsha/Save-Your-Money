@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ExpensesHelper
   def display_icon(group, expense)
     return unless expense.groups.any?

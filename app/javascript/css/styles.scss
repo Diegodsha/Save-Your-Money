@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 @font-face {
@@ -31,6 +30,7 @@ body {
 .create-new {
   font-family: "Satisfy", sans-serif;
 }
+
 .notice-box {
   height: 30px;
   color: rgb(14, 106, 5);
@@ -51,7 +51,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-/*navbar*/
+
+/* navbar */
 nav {
   background-color: $blue;
   border-bottom-right-radius: 1rem;
@@ -67,8 +68,11 @@ nav {
     -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
     -o-transition: opacity 0.3s ease, -o-transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transition: opacity 0.3s ease, transform 0.3s ease,
-      -webkit-transform 0.3s ease, -o-transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      -webkit-transform 0.3s ease,
+      -o-transform 0.3s ease;
 
     &:hover {
       opacity: 1;
@@ -84,11 +88,13 @@ nav {
     border-radius: 1rem;
     font-size: 12px;
   }
+
   .user-thumb {
     img {
       border: 3px solid #093f7c;
     }
   }
+
   .nav-link {
     border-radius: 1rem;
 
@@ -109,26 +115,30 @@ nav {
 .log-sign-btns {
   font-family: "proxima-light", sans-serif;
   width: 98%;
+
   .log-in-btn {
     width: 100%;
     text-align: center;
     background: $blue;
     border-radius: 5px;
+
     &:hover {
       background-color: #186bcb;
     }
   }
+
   .sign-up-btn {
     width: 100%;
     text-align: center;
     border-radius: 5px;
+
     &:hover {
       background: white;
     }
   }
 }
 
-/* expense cards*/
+/* expense cards */
 
 .total-expense {
   margin-bottom: 65px;
@@ -140,6 +150,7 @@ nav {
   background-color: white;
   box-shadow: 2px 2px 4px #0000007d;
   border-radius: 1rem;
+
   .save-money {
     font-size: 10px;
   }
@@ -157,12 +168,15 @@ nav {
   box-shadow: 2px 2px 4px #0000007d;
   max-width: 710px;
   min-width: 300px;
+
   &-header {
     font-family: "proxima-bold", sans-serif;
   }
+
   .card-body {
     padding: 2rem 1rem;
   }
+
   .card-date {
     bottom: -30px;
   }
@@ -176,9 +190,11 @@ nav {
   align-self: center;
   bottom: 4px;
   width: 96%;
+
   &:hover {
     background: #8fe355;
   }
+
   .new-exp {
     padding: 10px;
     width: 90%;
@@ -186,20 +202,24 @@ nav {
     border-radius: 0.5rem;
   }
 }
-/* expense card show*/
+
+/* expense card show */
 .bi-box-arrow-left {
   &::before {
     align-self: center;
     margin-right: 10px;
   }
+
   display: inline-block;
-  transform: translatey(0px);
+  transform: translateY(0);
+
   &:hover {
     text-shadow: 3px 7px 2px #000;
-    transform: translatey(-5px);
+    transform: translateY(-5px);
     transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1);
   }
 }
+
 .bi-cash {
   @extend .bi-box-arrow-left;
 }
@@ -211,42 +231,48 @@ nav {
 .bi-collection-fill {
   @extend .bi-box-arrow-left;
 }
+
 .bi-cash-stack {
   @extend .bi-box-arrow-left;
 }
 
 .bi-eye-fill {
   display: inline-block;
-  transform: translatey(0px);
+  transform: translateY(0);
+
   &:hover {
-    transform: translatey(-5px);
+    transform: translateY(-5px);
     transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1);
   }
 }
 
-/*forms*/
+/* forms */
 form {
   font-family: "proxima-ligth", sans-serif;
   background-color: white;
   border-radius: 1rem;
   padding: 20px;
+
   input {
     border: none;
     width: 100%;
   }
 }
 
-/*user profile*/
+/* user profile */
 .user-profile-ul {
   font-family: "proxima-ligth", sans-serif;
   background-color: $blue;
   border-radius: 1rem;
+
   li:hover {
     background-color: $blue;
+
     a {
       color: white;
     }
   }
+
   strong {
     font-size: 12px;
     font-family: "proxima-bold", sans-serif;

@@ -1,13 +1,6 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :authenticate, only: %i[edit update destroy home]
-
-  # GET /users or /users.json
-  # def index
-  #   @users = User.all
-  # end
 
   def home
     return unless logged_in?
