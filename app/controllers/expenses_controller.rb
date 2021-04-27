@@ -5,12 +5,12 @@ class ExpensesController < ApplicationController
   # GET /expenses or /expenses.json
   def index
     @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('author_id = ?',
-                                                                          current_user.id).joins(:groups_expenses)
+                                                                                        current_user.id).joins(:groups_expenses)
   end
 
   def expense_ungrouped
-    @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('author_id = ?',
-                                                                          current_user.id).left_outer_joins(:groups_expenses).where('group_id IS NULL')
+    @expenses = Expense.where('author_id = ?',
+                                              current_user.id).left_outer_joins(:groups_expenses).where('group_id IS NULL')
     render 'index'
   end
 
