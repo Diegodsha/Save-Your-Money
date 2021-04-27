@@ -5,6 +5,8 @@ class Group < ApplicationRecord
   has_many :expenses, through: :groups_expenses, dependent: :destroy
   has_one_attached :icon, dependent: :destroy
 
+  validates :name, presence: true, length: { minimum: 3, maximum: 15 }
+
   after_create :add_default_cover
 
   private
