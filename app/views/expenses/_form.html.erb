@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= form.label :group_id, class: 'input-group-text' %>
-    <%= form.collection_select(:group_id, Group.all, :id, :name, {include_blank: true}, {class: 'group-select w-100'}) %>
+    <%= form.collection_select(:group_id, Group.all.order(:name), :id, :name, {include_blank: true}, {class: 'group-select w-100'}) %>
     <hr>
   </div>
   <div class="actions">

@@ -11,7 +11,7 @@
         <li class="list-group-item d-flex justify-content-between" style="font-size:13px;">
           <span class="d-flex flex-column"> <small class="text-muted">Name</small> <%=expense.name%></span>
           <span class="d-flex flex-column"><small class="text-muted">Amount</small>$<%=expense.amount%></span>
-          <span class="d-flex flex-column"><small class="text-muted">Created by</small><%=expense.user.name%></span>
+          <span class="d-flex flex-column"><small class="text-muted">Created by</small><%=expense.author.name%></span>
           <%= display_eye(expense)%>
         </li>
       <% end %>

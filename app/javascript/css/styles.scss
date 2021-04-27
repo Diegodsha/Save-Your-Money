@@ -31,7 +31,26 @@ body {
 .create-new {
   font-family: "Satisfy", sans-serif;
 }
+.notice-box {
+  height: 30px;
+  color: rgb(14, 106, 5);
+  background-color: rgb(113, 211, 104);
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  margin: 5px 0;
+}
 
+.alert-box {
+  height: 43px;
+  color: rgb(132, 6, 6);
+  background-color: rgb(237, 69, 69);
+  border-radius: 1rem;
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*navbar*/
 nav {
   background-color: $blue;
@@ -205,7 +224,7 @@ nav {
   }
 }
 
-/**/
+/*forms*/
 form {
   font-family: "proxima-ligth", sans-serif;
   background-color: white;
@@ -216,8 +235,8 @@ form {
     width: 100%;
   }
 }
-/*user profile*/
 
+/*user profile*/
 .user-profile-ul {
   font-family: "proxima-ligth", sans-serif;
   background-color: $blue;

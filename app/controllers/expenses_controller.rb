@@ -4,11 +4,11 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('user_id = ?',current_user.id).joins(:groups_expenses)
+    @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('author_id = ?',current_user.id).joins(:groups_expenses)
   end
 
   def expense_ungrouped
-    @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('user_id = ?',current_user.id).left_outer_joins(:groups_expenses).where('group_id IS NULL')
+    @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('author_id = ?',current_user.id).left_outer_joins(:groups_expenses).where('group_id IS NULL')
     render 'index'
   end
   
@@ -19,7 +19,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = current_user.expenses.build
+    
+    @expense = Expense.new
   end
 
   # GET /expenses/1/edit
@@ -28,7 +29,8 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    @expense = current_user.expenses.build(expense_params)
+    @expense = Expense.new(expense_params)
+    @expense.author_id = current_user.id
   
     respond_to do |format|
       if @expense.save

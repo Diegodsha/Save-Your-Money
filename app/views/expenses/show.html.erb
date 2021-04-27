@@ -14,7 +14,7 @@
       <% end %>
     </div>
     <div class="card-footer text-muted">
-      Created by: <%= @expense.user.name %> - <%=time_ago_in_words(@expense.created_at.localtime)%> ago
+      Created by: <%= @expense.author.name %> - <%=time_ago_in_words(@expense.created_at.localtime)%> ago
     </div>
   </div>
 </div>
