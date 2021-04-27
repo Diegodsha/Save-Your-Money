@@ -4,8 +4,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.includes(groups: [icon_attachment: :blob]).where('author_id = ?',
-                                                                                        current_user.id).joins(:groups_expenses)
+    @expenses = Expense.where('author_id = ?',
+                                              current_user.id).joins(:groups_expenses)
   end
 
   def expense_ungrouped
