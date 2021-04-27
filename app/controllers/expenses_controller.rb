@@ -36,7 +36,7 @@ class ExpensesController < ApplicationController
         group_id = params[:expense][:group_id]
         GroupsExpense.create(group_id:group_id, expense_id:@expense.id) if group_id
       
-        format.html { redirect_to @expense, notice: "Expense added." }
+        format.html { redirect_to expenses_path, notice: "Expense added." }
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,8 +49,6 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        # group_id = params[:expense][:group_id]
-        # @expense.groups_expenses.update(group_id:group_id, expense_id:@expense.id)# if group_id
         format.html { redirect_to @expense, notice: "Expense was successfully updated." }
         format.json { render :show, status: :ok, location: @expense }
       else

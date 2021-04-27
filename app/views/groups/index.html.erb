@@ -1,14 +1,11 @@
-<div class="total-expense d-flex flex-column px-2">
-<div class="exp-total fw-bold  d-flex justify-content-center align-items-center mt-1 mb-4">
-  <span class="me-2">
-    Groups:<%=@groups.count%>
-  </span>
-</div>
-
-<%= render 'group' %>
-<div class="new-ex-btn text-center bg-succes w-100 mb-2 mt-5 d-flex align-items-center justify-content-center">
-  
-  <%= link_to 'New Group', new_group_path, class:'text-white text-decoration-none new-exp' %>
-  
-</div>
+<div class="total-expense d-flex flex-column px-2 position-relative">
+  <div class="exp-total fw-bold  d-flex justify-content-center align-items-center mt-1 mb-4">
+    <span class="me-2">
+      Groups:<%=@groups.count%>
+    </span>
+  </div>
+  <%= render 'group' %>
+  <div class="new-ex-btn text-center bg-succes position-fixed d-flex align-items-center justify-content-center">
+    <%= link_to 'New Group', new_group_path, class:'text-white text-decoration-none new-exp' %>
+  </div>
 </div>

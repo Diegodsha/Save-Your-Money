@@ -13,6 +13,28 @@ nav {
   background-color: $blue;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+
+  .navbar-toggler-icon {
+    opacity: 0.75;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    -o-transition: opacity 0.3s ease, -o-transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease,
+      -webkit-transform 0.3s ease, -o-transform 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      -webkit-transform: scale(1.2) rotate(270deg);
+      -ms-transform: scale(1.2) rotate(270deg);
+      -o-transform: scale(1.2) rotate(270deg);
+      transform: scale(1.2) rotate(270deg);
+    }
+  }
+
   .username {
     border: 2px solid #093f7c;
     border-radius: 1rem;
@@ -62,6 +84,10 @@ nav {
 
 /* expense cards*/
 
+.total-expense {
+  margin-bottom: 65px;
+}
+
 .exp-total {
   height: 60px;
   background-color: white;
@@ -95,6 +121,12 @@ nav {
   background: $green;
   border-radius: 0.5rem;
   height: 60px;
+  align-self: center;
+  bottom: 4px;
+  width: 96%;
+  &:hover {
+    background: #8fe355;
+  }
   .new-exp {
     padding: 10px;
     width: 90%;
@@ -103,26 +135,41 @@ nav {
   }
 }
 /* expense card show*/
+.bi-box-arrow-left {
+  &::before {
+    align-self: center;
+    margin-right: 10px;
+  }
+  display: inline-block;
+  transform: translatey(0px);
+  &:hover {
+    text-shadow: 3px 7px 2px #000;
+    transform: translatey(-5px);
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1);
+  }
+}
+.bi-cash {
+  @extend .bi-box-arrow-left;
+}
 
-.bi-cash::before {
-  align-self: center;
-  margin-right: 10px;
+.bi-pencil-square {
+  @extend .bi-box-arrow-left;
 }
-.bi-box-arrow-left::before {
-  align-self: center;
-  margin-right: 10px;
+
+.bi-collection-fill {
+  @extend .bi-box-arrow-left;
 }
-.bi-pencil-square::before {
-  align-self: center;
-  margin-right: 10px;
+.bi-cash-stack {
+  @extend .bi-box-arrow-left;
 }
-.bi-collection-fill::before {
-  align-self: center;
-  margin-right: 10px;
-}
-.bi-cash-stack::before {
-  align-self: center;
-  margin-right: 10px;
+
+.bi-eye-fill {
+  display: inline-block;
+  transform: translatey(0px);
+  &:hover {
+    transform: translatey(-5px);
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1);
+  }
 }
 
 /**/

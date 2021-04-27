@@ -8,7 +8,7 @@ module ApplicationHelper
       end
 
     def verbose_date(date)
-        date.strftime('%B %d %y')
+        date.strftime('%B-%d-%y')
         
     end
 end

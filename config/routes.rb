@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get 'expenses/expense_ungrouped', to: 'expenses#expense_ungrouped'
   resources :groups 
-  resources :expenses
+  resources :expenses, only: %i[show destroy new create index]
 
   root 'users#home'
 

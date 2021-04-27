@@ -1,21 +1,15 @@
-<div class="container">
-  
+<div class="container d-flex justify-content-center">
   <div class="card text-center mt-5">
     <div class="card-header">
-       <%= @expense.name %>
+      <%= @expense.name %>
     </div>
     <div class="card-body">
       <h5 class="card-title">Amount : $<%= @expense.amount %></h5>
-      <%= link_to expenses_path,class:"text-decoration-none" do %>
-      <i class="bi bi-arrow-left-square text-dark"></i>
+      <%= link_to 'javascript:history.back()',class:"text-decoration-none" do %>
+        <i class="bi bi-arrow-left-square text-dark"></i>
       <% end %>
-
-      <%= link_to edit_expense_path(@expense),class:"text-decoration-none" do %> 
-      <i class="bi bi-pencil text-dark mx-3 "></i>
-      <% end %>
-      
       <%= link_to @expense, method: :delete, data: { confirm: 'Are you sure you wnat to remove this expense?'} do %>
-      <i class="bi bi-trash text-dark"></i>
+        <i class="bi bi-trash text-dark"></i>
       <% end %>
     </div>
     <div class="card-footer text-muted">

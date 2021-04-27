@@ -11,18 +11,14 @@
           <span class="d-flex flex-column"> <small class="text-muted">Name</small> <%=expense.name%></span>
           <span class="d-flex flex-column"><small class="text-muted">Amount</small>$<%=expense.amount%></span>
           <span class="d-flex flex-column"><small class="text-muted">Created by</small><%=expense.user.name%></span>
-          <span class="d-flex align-items-end"><%= link_to expense do%>
-              <i class="bi bi-eye-fill text-secondary"></i>
-            <% end %></span>
+          <%= display_eye(expense)%>
         </li>
       <% end %>
     </ul>
     <div class="card-body text-center">
-      <%= link_to groups_path, class:"card-link text-decoration-none" do %>
+      <%= link_to 'javascript:history.back()', class:"card-link text-decoration-none" do %>
         <i class="bi bi-arrow-left-square text-dark"></i>
-      <% end %>
-      <%= link_to edit_group_path(@group), class:"card-link text-decoration-none" do %>
-        <i class="bi bi-pencil text-dark mx-3 "></i>
+        <%=display_modify(@group)%>
       <% end %>
     </div>
   </div>
