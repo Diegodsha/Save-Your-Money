@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   def add_default_cover
     return if avatar.attached?
-      avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'horse.jpg')), filename: 'horse.jpg',content_type: 'image/jpg')
+    
+      avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'horse.jpg')),
+      filename: 'horse.jpg', content_type: 'image/jpg')
   end
 end
