@@ -1,15 +1,9 @@
 module GroupsHelper
-    def display_eye(expense)
-        if current_user == expense.author
-            render 'eye'
-        end
-    end
+  def display_eye(expense)
+    render 'eye' if current_user == expense.author
+  end
 
-    def display_modify(group)
-        if current_user == group.user
-            render 'modify'
-        end
-    end
-    
-    
+  def display_modify(group)
+    render 'modify' if current_user == group.user
+  end
 end

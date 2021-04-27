@@ -1,6 +1,5 @@
 class Expense < ApplicationRecord
-
-  belongs_to :author,class_name: 'User'#:user
+  belongs_to :author, class_name: 'User' #:user
 
   has_many :groups_expenses, dependent: :destroy
   has_many :groups, through: :groups_expenses, dependent: :destroy

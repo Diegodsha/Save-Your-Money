@@ -10,9 +10,11 @@ class Group < ApplicationRecord
   after_create :add_default_cover
 
   private
- def add_default_cover
-  unless icon.attached?
-    self.icon.attach(io: File.open(Rails.root.join("app", "assets", "images", "bkcode7.jpg")), filename: 'bkcode7.jpg' , content_type: "image/jpg")
+
+  def add_default_cover
+    unless icon.attached?
+      icon.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'bkcode7.jpg')),
+                  filename: 'bkcode7.jpg', content_type: 'image/jpg')
+    end
   end
-end
 end

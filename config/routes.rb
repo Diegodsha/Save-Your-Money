@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'users#home'
   get 'log', to: 'sessions#login'
   get 'login', to: 'sessions#new'
@@ -10,5 +9,4 @@ Rails.application.routes.draw do
   resources :groups, only: %i[show destroy new create index update edit]
   resources :expenses, only: %i[show destroy new create index]
   resources :users, only: %i[show update destroy home edit new create]
-
 end
