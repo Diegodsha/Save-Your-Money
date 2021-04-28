@@ -85,9 +85,11 @@ To run this app on your local enviroment or web browser, simply follow the steps
 
 ## Live Demo
 
+- TIP: This is a mobile app so for full experience access it from your phone or set your web browser into mobile view and disable touch function
 - Simply access this link [Save-Your-Money-Live](https://symoney.herokuapp.com/log)
 - TO GET A SMILE ON YOUR FACE CREATE A NEW USER WITHOU ANY IMAGE
 - You can also access a test user - username: Diego
+- [Presentation-video](https://www.loom.com/share/c442ee053c874ae898561d98663caefe?sharedAppSource=personal_library)
 
 ## How to run the test suite
 
