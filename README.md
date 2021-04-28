@@ -115,6 +115,8 @@ To run this app on your local enviroment or web browser, simply follow the steps
 
 - [Microverse](https://www.microverse.org)
 
+- The design of the project was inspired by [GregoireVella](https://www.behance.net/gregoirevella).
+
 ## License
 
 - This project is [MIT](https://github.com/Diegodsha/Save-Your-Money/blob/main/LICENSE) licensed.
