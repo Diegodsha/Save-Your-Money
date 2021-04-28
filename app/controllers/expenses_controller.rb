@@ -4,13 +4,13 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.where('author_id = ?',
-                              current_user.id).joins(:groups_expenses)
+    @expenses = Expense.includes(:author).where('author_id = ?',
+                              current_user.id).joins(:groups_expenses).most_recent
   end
 
   def expense_ungrouped
-    @expenses = Expense.where('author_id = ?',
-                              current_user.id).left_outer_joins(:groups_expenses).where('group_id IS NULL')
+    @expenses = Expense.includes(:author).where('author_id = ?',
+                              current_user.id).left_outer_joins(:groups_expenses).where('group_id IS NULL').most_recent
     render 'index'
   end
 
