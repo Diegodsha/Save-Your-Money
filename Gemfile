@@ -33,9 +33,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'gravatar_image_tag', '~> 1.2'
 gem 'cloudinary'
-gem "figaro"
 gem 'rexml', '~> 3.2.4'
 
 group :development, :test do
