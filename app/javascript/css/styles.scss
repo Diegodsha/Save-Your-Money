@@ -1,16 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-@font-face {
-  font-family: proxima-light;
-  src: url(/app/assets/fonts/ProximaNovaCondensedLight.otf);
-}
-
-@font-face {
-  font-family: proxima-bold;
-  src: url(/app/assets/fonts/ProximaNovaBold.otf);
-}
-
 $blue: #3778c2;
 $green: #5fb523;
 $gray: #434b54;
@@ -20,11 +10,11 @@ body {
 }
 
 .proxima-bold {
-  font-family: "proxima-bold", sans-serif;
+  font-family: "proximabold", sans-serif;
 }
 
 .proxima-light {
-  font-family: "proxima-light", sans-serif;
+  font-family: "proximalight", sans-serif;
 }
 
 .create-new {
@@ -57,7 +47,7 @@ nav {
   background-color: $blue;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  font-family: "proxima-ligth", sans-serif;
+  font-family: "proximaligth", sans-serif;
 
   .navbar-toggler-icon {
     opacity: 0.75;
@@ -68,11 +58,8 @@ nav {
     -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
     -o-transition: opacity 0.3s ease, -o-transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      -webkit-transform 0.3s ease,
-      -o-transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease,
+      -webkit-transform 0.3s ease, -o-transform 0.3s ease;
 
     &:hover {
       opacity: 1;
@@ -113,7 +100,7 @@ nav {
 }
 
 .log-sign-btns {
-  font-family: "proxima-light", sans-serif;
+  font-family: "proximalight", sans-serif;
   width: 98%;
 
   .log-in-btn {
@@ -145,7 +132,7 @@ nav {
 }
 
 .exp-total {
-  font-family: "proxima-bold", sans-serif;
+  font-family: "proximabold", sans-serif;
   height: 60px;
   background-color: white;
   box-shadow: 2px 2px 4px #0000007d;
@@ -163,14 +150,14 @@ nav {
 }
 
 .card {
-  font-family: "proxima-ligth", sans-serif;
+  font-family: "proximaligth", sans-serif;
   border-radius: 1rem;
   box-shadow: 2px 2px 4px #0000007d;
   max-width: 710px;
   min-width: 300px;
 
   &-header {
-    font-family: "proxima-bold", sans-serif;
+    font-family: "proximabold", sans-serif;
   }
 
   .card-body {
@@ -183,7 +170,7 @@ nav {
 }
 
 .new-ex-btn {
-  font-family: "proxima-ligth", sans-serif;
+  font-family: "proximaligth", sans-serif;
   background: $green;
   border-radius: 0.5rem;
   height: 60px;
@@ -248,7 +235,7 @@ nav {
 
 /* forms */
 form {
-  font-family: "proxima-ligth", sans-serif;
+  font-family: "proximaligth", sans-serif;
   background-color: white;
   border-radius: 1rem;
   padding: 20px;
@@ -261,7 +248,7 @@ form {
 
 /* user profile */
 .user-profile-ul {
-  font-family: "proxima-ligth", sans-serif;
+  font-family: "proximaligth", sans-serif;
   background-color: $blue;
   border-radius: 1rem;
 
@@ -275,6 +262,6 @@ form {
 
   strong {
     font-size: 12px;
-    font-family: "proxima-bold", sans-serif;
+    font-family: "proximabold", sans-serif;
   }
 }
