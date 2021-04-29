@@ -11,13 +11,6 @@ RSpec.describe User, type: :model do
   let(:group) { Group.create(name: 'Group1', user_id: user.id) }
 
   describe 'Users can be created' do
-    it 'App can have users' do
-      usertest = User.new(name: 'usertest', email: 'usertest@gmail.com')
-      usertest.save
-
-      expect(usertest).to be_valid
-    end
-
     it 'User validates presence of name' do
       user_no_name.save
 
