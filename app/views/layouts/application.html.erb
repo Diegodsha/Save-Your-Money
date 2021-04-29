@@ -8,19 +8,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" %>
   </head>
   <body>
-    <% if notice %>
-      <div class="notice-box">
-        <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div class="alert-box">
-        <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
+    <%= show_notice %>
+    <%= show_alert %>
     <%=render 'partials/nav'%>
     <%= yield %>
   </body>

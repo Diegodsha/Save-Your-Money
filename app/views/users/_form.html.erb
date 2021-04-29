@@ -1,14 +1,10 @@
 <%= form_with(model: user) do |form|%>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%=show_errors(user)%>
+  <ul>
+    <% user.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
   <div class="field">
     <%= form.label :avatar,style:"display:none" %>
     <%= form.file_field :avatar, direct_upload: true, accept: "image/jpeg, image/gif, image/png" %>

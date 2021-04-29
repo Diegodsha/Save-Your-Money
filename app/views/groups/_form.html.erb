@@ -1,14 +1,10 @@
 <%= form_with(model: group) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%=show_errors(group)%>
+  <ul>
+    <% group.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
   <div class="field">
     <%= form.label :icon,style:"display:none" %>
     <%= form.file_field :icon, direct_upload: true, accept: "image/jpeg, image/gif, image/png" %>
