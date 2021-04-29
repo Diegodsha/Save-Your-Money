@@ -58,11 +58,8 @@ nav {
     -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
     -o-transition: opacity 0.3s ease, -o-transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      -webkit-transform 0.3s ease,
-      -o-transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease,
+      -webkit-transform 0.3s ease, -o-transform 0.3s ease;
 
     &:hover {
       opacity: 1;
