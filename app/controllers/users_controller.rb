@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
-  before_action :authenticate, only: %i[edit update destroy home]
+  before_action :authenticate, only: %i[edit update destroy home show]
 
   def home
     return unless logged_in?
