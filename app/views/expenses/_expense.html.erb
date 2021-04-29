@@ -1,0 +1,19 @@
+<% @expenses.each do |expense| %>
+
+<div class="card mb-3 align-self-center " style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-4">
+    <%=display_icon(expense.groups.take,expense)%>
+    </div>
+    <div class="col-8">
+      <div class="card-body h-100">
+        <h5 class="card-title d-flex justify-content-between"><span><%= expense.name %> </span><span class="fw-bold">$<%= expense.amount %></span> </h5>
+        <p class="card-text position-relative card-date d-flex justify-content-between"><small class="text-muted"><%=verbose_date(expense.created_at) %></small><%= link_to expense do%>
+        <i class="bi bi-eye-fill text-secondary"></i>
+        <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

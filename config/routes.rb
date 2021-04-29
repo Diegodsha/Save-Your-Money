@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'users#home'
+  get 'log', to: 'sessions#login'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+  get 'expenses/expense_ungrouped', to: 'expenses#expense_ungrouped'
+
+  resources :groups, only: %i[show destroy new create index update edit]
+  resources :expenses, only: %i[show destroy new create index]
+  resources :users, only: %i[show update destroy home edit new create]
 end

@@ -1,0 +1,20 @@
+<% provide(:title, "Expenses") %>
+<div class="container d-flex justify-content-center">
+  <div class="card text-center mt-5">
+    <div class="card-header">
+      <%= @expense.name %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Amount : $<%= @expense.amount %></h5>
+      <%= link_to 'javascript:history.back()',class:"text-decoration-none" do %>
+        <i class="bi bi-arrow-left-square text-dark"></i>
+      <% end %>
+      <%= link_to @expense, method: :delete, data: { confirm: 'Are you sure you wnat to remove this expense?'} do %>
+        <i class="bi bi-trash text-dark"></i>
+      <% end %>
+    </div>
+    <div class="card-footer text-muted">
+      Created by: <%= @expense.author.name %> - <%=time_ago_in_words(@expense.created_at.localtime)%> ago
+    </div>
+  </div>
+</div>

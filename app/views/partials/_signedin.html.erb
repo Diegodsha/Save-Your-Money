@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark ">
+  <div class="container-fluid">
+    <p class="navbar-brand create-new  m-0 p-0">SYMo</p>
+    <span class="text-white proxima-bold"> <%= yield(:title) %></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item d-flex flex-column align-items-center mt-4">
+          <div class='user-thumb d-flex justify-content-center'>
+            <%=link_to image_tag(current_user.avatar, style:"width:180px; height:180px; border-radius:50%"), user_path(current_user)%>
+          </div>
+          <div class="username text-white d-flex justify-content-center nav-link p-2 my-3"> <%="Hello #{current_user.name.titlecase} ready to start saving money?"%></div>
+        </li>
+        <li class="nav-item">
+          <%=link_to 'All my Expenses', expenses_path, class: 'nav-link d-flex justify-content-center bi bi-cash'%>
+        </li>
+        <li class="nav-item">
+          <%=link_to 'All my External Expenses', expenses_expense_ungrouped_path, class: 'nav-link d-flex justify-content-center bi  bi-cash-stack'%>
+        </li>
+        <li class="nav-item">
+          <%=link_to 'All groups', groups_path, class: 'nav-link d-flex justify-content-center bi bi-collection-fill'%>
+        </li>
+        <li class="nav-item">
+          <%=link_to 'Edit your profile', edit_user_path(current_user), class:'d-flex justify-content-center nav-link bi bi-pencil-square'%>
+        </li>
+        <li class="nav-item ">
+          <%=link_to 'Log out', logout_path, class: 'nav-link d-flex justify-content-center bi bi-box-arrow-left'%>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
