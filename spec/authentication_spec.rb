@@ -9,22 +9,22 @@ RSpec.describe 'Sign in', type: :system do
     visit '/login'
 
     within('#new_session') do
-        fill_in 'Name', with: 'Hello'
+      fill_in 'Name', with: 'Hello'
     end
 
     sleep(3)
     click_button 'Login'
 
     sleep(3)
-   expect(page).to have_content('You logged in succesfully as Hello')
+    expect(page).to have_content('You logged in succesfully as Hello')
   end
 
   describe 'New expense page' do
     it 'shows an authentication warning' do
-        visit new_expense_path
-        sleep(3)
+      visit new_expense_path
+      sleep(3)
 
-        expect(page).to have_content('You need to login or sign up to access')
+      expect(page).to have_content('You need to login or sign up to access')
     end
-    end
+  end
 end

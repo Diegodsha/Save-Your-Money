@@ -12,9 +12,9 @@ RSpec.describe User, type: :model do
 
   describe 'Users can be created' do
     it 'App can have users' do
-      usertest= User.new(name:'usertest',email:'usertest@gmail.com')
+      usertest = User.new(name: 'usertest', email: 'usertest@gmail.com')
       usertest.save
-       
+
       expect(usertest).to be_valid
     end
 
