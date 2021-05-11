@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
   let(:name) { 'simple name' }
-  let(:author) { User.create(name: 'Diego', email: 'diego@hotmail.com', id: 1) }
+  let(:author) { User.create(name: 'Diego', email: 'diego@hotmail.com') }
   let(:ex1) { Expense.new(name: 'Expense1', amount: 51) }
   let(:ex2) { Expense.new(name: 'Expense2', amount: 52) }
   let(:group) { Group.create(name: 'Group1', user_id: author.id) }
@@ -11,7 +11,9 @@ RSpec.describe Expense, type: :model do
 
   describe 'Expenses can be created and validated' do
     it 'A user can create an expense' do
-      ex1.author_id = author.id
+      # d = User.new(name: 'ddd', email: 'd@hotmail.com')
+      # d.save
+      ex1.author = author
       ex1.save
 
       expect(ex1).to be_valid
